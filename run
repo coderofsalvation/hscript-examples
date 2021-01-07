@@ -1,0 +1,11 @@
+#!/bin/bash
+	
+build(){
+	set -x;
+	echo "building.."
+	haxe -D js-es=6 -D hscriptPos -lib hscript -lib hxnodejs -main "$1" --js out.js && \
+	haxe -D hscriptPos -lib hscript -main "$1" --lua out.lua
+	haxe -D hscriptPos -lib hscript -main "$1" --python out.py
+}
+
+haxe -D hscriptPos -lib hscript -main "$1" --interp && build "$1"

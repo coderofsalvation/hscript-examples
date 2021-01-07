@@ -1,0 +1,13 @@
+{
+
+	foo: function(){
+		console.log("foo!");
+	},
+	bar: function(a){
+		console.log("bar! "+a);
+		return {
+			x:1,
+			y:2
+		}
+	}
+}
